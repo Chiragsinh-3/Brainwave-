@@ -1,8 +1,8 @@
 import React from "react";
 import Squares from "./Squares/Squares";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "./ui/button";
 
 const FeatureCard = ({ icon, title, description }) => (
   <Card className='p-6 hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700'>
