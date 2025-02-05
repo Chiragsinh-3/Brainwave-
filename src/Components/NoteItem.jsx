@@ -2,16 +2,12 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import NoteContext from "../context/notes/noteContext";
 import Loading from "./Loading";
 
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
+
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 import { Pencil, Trash2, ChevronDown, ChevronUp, Check, X } from "lucide-react";
+import { Button } from "./ui/button";
 
 const NoteItem = (props) => {
   const context = useContext(NoteContext);
