@@ -7,7 +7,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const Notes = () => {
   const context = useContext(NoteContext);
-  let location = useLocation();
   const navigate = useNavigate(); // Use the useNavigate hook
   const { notes, fetchNotes } = context;
   const [loading, setLoading] = useState(false);

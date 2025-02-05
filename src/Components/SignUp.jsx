@@ -1,7 +1,8 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import AuthContext from "../context/auth/authContext";
 import AlertContext from "../context/alert/alertContext";
 import Loading from "./Loading";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const authContext = useContext(AuthContext);
@@ -14,6 +15,18 @@ const SignUp = () => {
   const [cpassword, setcPassword] = useState("");
   const imageRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    function checkUser() {
+      if (localStorage.getItem("token")) {
+        setLoading(true);
+        navigate("/notes");
+        setLoading(false);
+      }
+    }
+    checkUser();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

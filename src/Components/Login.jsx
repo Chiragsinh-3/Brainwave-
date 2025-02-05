@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import AuthContext from "../context/auth/authContext";
 import Loading from "./Loading";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const authContext = useContext(AuthContext);
@@ -10,7 +11,18 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const formRef = useRef(null);
   const imageRef = useRef(null);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    function checkUser() {
+      if (localStorage.getItem("token")) {
+        setLoading(true);
+        navigate("/notes");
+        setLoading(false);
+      }
+    }
+    checkUser();
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
