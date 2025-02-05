@@ -1,7 +1,7 @@
 import React from "react";
 import Squares from "./Squares/Squares";
 import { Link } from "react-router-dom";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 
 const FeatureCard = ({ icon, title, description }) => (
