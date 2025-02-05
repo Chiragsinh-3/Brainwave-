@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import NoteContext from "../context/notes/noteContext";
-import AlertContext from "../context/alert/alertContext";
 import Loading from "./Loading";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { Textarea } from "./ui/textarea";
@@ -10,9 +9,6 @@ import { PenLine } from "lucide-react";
 import { Input } from "./ui/input";
 
 const AddNote = () => {
-  const alertContext = useContext(AlertContext);
-  const { addAlert } = alertContext;
-
   const context = useContext(NoteContext);
   const { addNote } = context;
 
