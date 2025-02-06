@@ -21,11 +21,6 @@ app.use("/api/notes", notesRoutes);
 // MongoDB Connection
 const mongoURI = process.env.MONGO_URI;
 
-if (!mongoURI) {
-  console.error("MONGO_URI is not defined in the environment variables");
-  process.exit(1);
-}
-
 mongoose
   .connect(mongoURI, {
     serverSelectionTimeoutMS: 10000, // Increase timeout to 10 seconds
