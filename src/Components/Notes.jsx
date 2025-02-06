@@ -32,7 +32,7 @@ const Notes = () => {
   return (
     <>
       {loading && <Loading />}
-      <div className='w-screen min-h-screen py-16 bg-white dark:bg-slate-900'>
+      <div className='max-w-screen min-h-screen py-16 bg-white dark:bg-slate-900'>
         <div className='container mx-auto  p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg'>
           <div className='grid grid-cols-1 gap-4 my-5'>
             <AddNote />
