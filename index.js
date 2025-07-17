@@ -21,6 +21,11 @@ app.use("/api/notes", notesRoutes);
 // MongoDB Connection
 const mongoURI = process.env.MONGO_URI;
 
+app.route("/ping").get((req, res) => {
+  console.log("Ping received 💥💥");
+  res.json({ message: "Pong" });
+});
+
 mongoose
   .connect(mongoURI, {
     serverSelectionTimeoutMS: 10000, // Increase timeout to 10 seconds
